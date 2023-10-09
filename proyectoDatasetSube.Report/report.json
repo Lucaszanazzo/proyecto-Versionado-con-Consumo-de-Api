@@ -46,12 +46,12 @@
       "name": "ReportSection",
       "visualContainers": [
         {
-          "config": "{\"name\":\"31f07ddf73655ac67afb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":28.222822918322997,\"y\":479.78798961149096,\"z\":3000,\"width\":397.2905072348545,\"height\":210.5856786982562,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(dataset_viajes_sube.CANTIDAD)\"}],\"Category\":[{\"queryRef\":\"dataset_viajes_sube.TIPO_TRANSPORTE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataset_viajes_sube\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0},\"Name\":\"Sum(dataset_viajes_sube.CANTIDAD)\",\"NativeReferenceName\":\"Suma de CANTIDAD\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"TIPO_TRANSPORTE\"},\"Name\":\"dataset_viajes_sube.TIPO_TRANSPORTE\",\"NativeReferenceName\":\"TIPO_TRANSPORTE\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
+          "config": "{\"name\":\"31f07ddf73655ac67afb\",\"layouts\":[{\"id\":0,\"position\":{\"x\":17.367891026660306,\"y\":125.91720994328722,\"z\":3000,\"width\":199.73074680659352,\"height\":162.82397837494037,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Sum(dataset_viajes_sube.CANTIDAD)\"}],\"Category\":[{\"queryRef\":\"dataset_viajes_sube.TIPO_TRANSPORTE\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataset_viajes_sube\",\"Type\":0}],\"Select\":[{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0},\"Name\":\"Sum(dataset_viajes_sube.CANTIDAD)\",\"NativeReferenceName\":\"Suma de CANTIDAD\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"TIPO_TRANSPORTE\"},\"Name\":\"dataset_viajes_sube.TIPO_TRANSPORTE\",\"NativeReferenceName\":\"TIPO_TRANSPORTE\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"legend\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
           "filters": "[]",
-          "height": 210.59,
-          "width": 397.29,
-          "x": 28.22,
-          "y": 479.79,
+          "height": 162.82,
+          "width": 199.73,
+          "x": 17.37,
+          "y": 125.92,
           "z": 3000.00
         },
         {
@@ -71,15 +71,6 @@
           "x": 640.44,
           "y": 21.71,
           "z": 6000.00
-        },
-        {
-          "config": "{\"name\":\"897d066d6152bf3ffb04\",\"layouts\":[{\"id\":0,\"position\":{\"x\":28.222822918322997,\"y\":312.62203847988553,\"z\":1000,\"width\":397.2905072348545,\"height\":167.16595113160545,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dataset_viajes_sube.PARCIAL\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(dataset_viajes_sube.CANTIDAD)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataset_viajes_sube\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"PARCIAL\"},\"Name\":\"dataset_viajes_sube.PARCIAL\",\"NativeReferenceName\":\"PARCIAL\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0},\"Name\":\"Sum(dataset_viajes_sube.CANTIDAD)\",\"NativeReferenceName\":\"Suma de CANTIDAD\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"CANTIDAD\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
-          "filters": "[]",
-          "height": 167.17,
-          "width": 397.29,
-          "x": 28.22,
-          "y": 312.62,
-          "z": 1000.00
         },
         {
           "config": "{\"name\":\"8de201b647e9d9cc7977\",\"layouts\":[{\"id\":0,\"position\":{\"x\":454.4496827478643,\"y\":415.2479529261636,\"z\":2000,\"width\":798.5537556272376,\"height\":275.8640246712275,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dataset_viajes_sube.Fecha.Variación.Jerarquía de fechas.Mes\",\"active\":true}],\"Y\":[{\"queryRef\":\"dataset_viajes_sube.Num pasajeros\"}],\"Series\":[{\"queryRef\":\"dataset_viajes_sube.TIPO_TRANSPORTE\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataset_viajes_sube\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"dataset_viajes_sube.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Num pasajeros\"},\"Name\":\"dataset_viajes_sube.Num pasajeros\",\"NativeReferenceName\":\"Num pasajeros\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"TIPO_TRANSPORTE\"},\"Name\":\"dataset_viajes_sube.TIPO_TRANSPORTE\",\"NativeReferenceName\":\"TIPO_TRANSPORTE\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}],\"valueAxis\":[{\"properties\":{\"showAxisTitle\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}}",
@@ -109,13 +100,22 @@
           "z": 0.00
         },
         {
-          "config": "{\"name\":\"e20b78ad77296c6eadc5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":17.400909129529715,\"y\":116.58609116784909,\"z\":5000,\"width\":408.9213645439483,\"height\":177.4892731212031,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"dataset_viajes_sube.Num pasajeros\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataset_viajes_sube\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Num pasajeros\"},\"Name\":\"dataset_viajes_sube.Num pasajeros\",\"NativeReferenceName\":\"Num pasajeros\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Num pasajeros\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"36D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000000D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total de pasajeros'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
+          "config": "{\"name\":\"e20b78ad77296c6eadc5\",\"layouts\":[{\"id\":0,\"position\":{\"x\":236.6622948495268,\"y\":129.22051681968028,\"z\":5000,\"width\":188.74906951189254,\"height\":159.71075112544753,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"dataset_viajes_sube.Num pasajeros\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataset_viajes_sube\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Num pasajeros\"},\"Name\":\"dataset_viajes_sube.Num pasajeros\",\"NativeReferenceName\":\"Num pasajeros\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Num pasajeros\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"labels\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"36D\"}}},\"labelDisplayUnits\":{\"expr\":{\"Literal\":{\"Value\":\"1000000D\"}}}}}],\"categoryLabels\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"10D\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"show\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Total de pasajeros'\"}}},\"alignment\":{\"expr\":{\"Literal\":{\"Value\":\"'center'\"}}}}}]}}}",
           "filters": "[]",
-          "height": 177.49,
-          "width": 408.92,
-          "x": 17.40,
-          "y": 116.59,
+          "height": 159.71,
+          "width": 188.75,
+          "x": 236.66,
+          "y": 129.22,
           "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"f6b8ccfe719a3d144eb9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":17.367891026660306,\"y\":312.62203847988553,\"z\":6003,\"width\":408.1454391265172,\"height\":377.75162982986166,\"tabOrder\":6003}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"dataset_viajes_sube.Fecha.Variación.Jerarquía de fechas.Mes\"},{\"queryRef\":\"dataset_viajes_sube.Num pasajeros\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dataset_viajes_sube\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"dataset_viajes_sube.Fecha.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"Fecha Mes\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Num pasajeros\"},\"Name\":\"dataset_viajes_sube.Num pasajeros\",\"NativeReferenceName\":\"Num pasajeros\"}],\"OrderBy\":[{\"Direction\":1,\"Expression\":{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"}}}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"values\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"16D\"}}}}},{\"properties\":{},\"selector\":{\"data\":[{\"dataViewWildcard\":{\"matchingOption\":1}}],\"metadata\":\"dataset_viajes_sube.Num pasajeros\"}}],\"columnFormatting\":[{\"properties\":{\"dataBars\":{\"positiveColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#ACE48B'\"}}}}},\"negativeColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#efb5b9'\"}}}}},\"axisColor\":{\"solid\":{\"color\":{\"expr\":{\"Literal\":{\"Value\":\"'#252423'\"}}}}},\"reverseDirection\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}},\"hideText\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}},\"selector\":{\"metadata\":\"dataset_viajes_sube.Num pasajeros\"}}]}}}",
+          "filters": "[]",
+          "height": 377.75,
+          "width": 408.15,
+          "x": 17.37,
+          "y": 312.62,
+          "z": 6003.00
         }
       ],
       "width": 1280.00
