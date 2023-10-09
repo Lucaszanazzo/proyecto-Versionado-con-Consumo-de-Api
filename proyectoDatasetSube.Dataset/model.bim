@@ -95,14 +95,14 @@
             "annotations": [
               {
                 "name": "SummarizationSetBy",
-                "value": "Automatic"
+                "value": "User"
               }
             ],
             "dataType": "int64",
             "formatString": "0",
             "lineageTag": "2866c323-ac34-43a0-9337-e4b3b29fe40d",
             "sourceColumn": "CANTIDAD",
-            "summarizeBy": "sum"
+            "summarizeBy": "none"
           },
           {
             "name": "Fecha",
@@ -177,6 +177,14 @@
           }
         ],
         "lineageTag": "445efb90-373b-4d26-9730-df6419c4817f",
+        "measures": [
+          {
+            "name": "Num pasajeros",
+            "expression": "SUM(dataset_viajes_sube[CANTIDAD]) ",
+            "formatString": "0",
+            "lineageTag": "32639328-efb4-4e3d-9673-6d7265e6d1b4"
+          }
+        ],
         "partitions": [
           {
             "name": "dataset_viajes_sube",
@@ -201,9 +209,10 @@
                 "    #\"Columna duplicada2\" = Table.DuplicateColumn(#\"Columnas con nombre cambiado1\", \"Fecha\", \"Fecha - Copia\"),",
                 "    #\"Columnas reordenadas2\" = Table.ReorderColumns(#\"Columna duplicada2\",{\"TIPO_TRANSPORTE\", \"PARCIAL\", \"CANTIDAD\", \"Fecha\", \"Fecha - Copia\", \"Num Mes\", \"Año\"}),",
                 "    #\"Día extraído\" = Table.TransformColumns(#\"Columnas reordenadas2\",{{\"Fecha - Copia\", Date.Day, Int64.Type}}),",
-                "    #\"Columnas con nombre cambiado2\" = Table.RenameColumns(#\"Día extraído\",{{\"Fecha - Copia\", \"Dia\"}})",
+                "    #\"Columnas con nombre cambiado2\" = Table.RenameColumns(#\"Día extraído\",{{\"Fecha - Copia\", \"Dia\"}}),",
+                "    #\"Filas filtradas\" = Table.SelectRows(#\"Columnas con nombre cambiado2\", each ([PARCIAL] <> null))",
                 "in",
-                "    #\"Columnas con nombre cambiado2\""
+                "    #\"Filas filtradas\""
               ],
               "type": "m"
             }
