@@ -249,7 +249,40 @@
               "type": "m"
             }
           }
-        ]
+        ],
+        "refreshPolicy": {
+          "incrementalGranularity": "day",
+          "incrementalPeriods": 10,
+          "policyType": "basic",
+          "rollingWindowGranularity": "year",
+          "rollingWindowPeriods": 4,
+          "sourceExpression": [
+            "let",
+            "    Origen = Csv.Document(Web.Contents(\"https://cdn.buenosaires.gob.ar/datosabiertos/datasets/transporte-y-obras-publicas/sube/dataset_viajes_sube.csv\"),[Delimiter=\",\", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+            "    #\"Encabezados promovidos\" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),",
+            "    #\"Tipo cambiado\" = Table.TransformColumnTypes(#\"Encabezados promovidos\",{{\"TIPO_TRANSPORTE\", type text}, {\"DIA\", type text}, {\"PARCIAL\", type logical}, {\"CANTIDAD\", Int64.Type}}),",
+            "    #\"Dividir columna por delimitador\" = Table.SplitColumn(#\"Tipo cambiado\", \"DIA\", Splitter.SplitTextByEachDelimiter({\":\"}, QuoteStyle.Csv, false), {\"DIA.1\", \"DIA.2\"}),",
+            "    #\"Tipo cambiado1\" = Table.TransformColumnTypes(#\"Dividir columna por delimitador\",{{\"DIA.1\", type date}, {\"DIA.2\", type time}}),",
+            "    #\"Columnas quitadas\" = Table.RemoveColumns(#\"Tipo cambiado1\",{\"DIA.2\"}),",
+            "    #\"Columnas con nombre cambiado\" = Table.RenameColumns(#\"Columnas quitadas\",{{\"DIA.1\", \"Fecha\"}}),",
+            "    #\"Columna duplicada\" = Table.DuplicateColumn(#\"Columnas con nombre cambiado\", \"Fecha\", \"Fecha - Copia\"),",
+            "    #\"Columnas reordenadas\" = Table.ReorderColumns(#\"Columna duplicada\",{\"TIPO_TRANSPORTE\", \"PARCIAL\", \"CANTIDAD\", \"Fecha\", \"Fecha - Copia\"}),",
+            "    #\"Año extraído\" = Table.TransformColumns(#\"Columnas reordenadas\",{{\"Fecha - Copia\", Date.Year, Int64.Type}}),",
+            "    #\"Columna duplicada1\" = Table.DuplicateColumn(#\"Año extraído\", \"Fecha\", \"Fecha - Copia.1\"),",
+            "    #\"Columnas reordenadas1\" = Table.ReorderColumns(#\"Columna duplicada1\",{\"TIPO_TRANSPORTE\", \"PARCIAL\", \"CANTIDAD\", \"Fecha\", \"Fecha - Copia.1\", \"Fecha - Copia\"}),",
+            "    #\"Mes extraído\" = Table.TransformColumns(#\"Columnas reordenadas1\",{{\"Fecha - Copia.1\", Date.Month, Int64.Type}}),",
+            "    #\"Columnas con nombre cambiado1\" = Table.RenameColumns(#\"Mes extraído\",{{\"Fecha - Copia.1\", \"Num Mes\"}, {\"Fecha - Copia\", \"Año\"}}),",
+            "    #\"Columna duplicada2\" = Table.DuplicateColumn(#\"Columnas con nombre cambiado1\", \"Fecha\", \"Fecha - Copia\"),",
+            "    #\"Columnas reordenadas2\" = Table.ReorderColumns(#\"Columna duplicada2\",{\"TIPO_TRANSPORTE\", \"PARCIAL\", \"CANTIDAD\", \"Fecha\", \"Fecha - Copia\", \"Num Mes\", \"Año\"}),",
+            "    #\"Día extraído\" = Table.TransformColumns(#\"Columnas reordenadas2\",{{\"Fecha - Copia\", Date.Day, Int64.Type}}),",
+            "    #\"Columnas con nombre cambiado2\" = Table.RenameColumns(#\"Día extraído\",{{\"Fecha - Copia\", \"Dia\"}}),",
+            "    #\"Filas filtradas\" = Table.SelectRows(#\"Columnas con nombre cambiado2\", each ([PARCIAL] <> null)),",
+            "    #\"Tipo cambiado2\" = Table.TransformColumnTypes(#\"Filas filtradas\",{{\"Fecha\", type datetime}}),",
+            "    #\"Filas filtradas1\" = Table.SelectRows(#\"Tipo cambiado2\", each [Fecha] >= RangeStart and [Fecha] < RangeEnd)",
+            "in",
+            "    #\"Filas filtradas1\""
+          ]
+        }
       },
       {
         "name": "DateTableTemplate_eb2742c4-3fdb-44a4-a267-b920ac995b90",
