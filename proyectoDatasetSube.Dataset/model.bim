@@ -4,7 +4,7 @@
     "annotations": [
       {
         "name": "PBI_QueryOrder",
-        "value": "[\"dataset_viajes_sube\"]"
+        "value": "[\"dataset_viajes_sube\",\"RangeStart\",\"RangeEnd\"]"
       },
       {
         "name": "__PBI_TimeIntelligenceEnabled",
@@ -38,6 +38,40 @@
       "returnErrorValuesAsNull": true
     },
     "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "expressions": [
+      {
+        "name": "RangeStart",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegación"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "DateTime"
+          }
+        ],
+        "expression": "#datetime(2015, 1, 1, 0, 0, 0) meta [IsParameterQuery=true, Type=\"DateTime\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "0a511741-2624-4551-b516-8fe26b9c21af"
+      },
+      {
+        "name": "RangeEnd",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navegación"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "DateTime"
+          }
+        ],
+        "expression": "#datetime(2024, 1, 1, 0, 0, 0) meta [IsParameterQuery=true, Type=\"DateTime\", IsParameterQueryRequired=true]",
+        "kind": "m",
+        "lineageTag": "3efe69e5-d2fd-4625-9bc8-8e54b65fc6b9"
+      }
+    ],
     "relationships": [
       {
         "name": "4d4e1ff7-86eb-44c5-bd8d-878bb472f5a2",
@@ -110,10 +144,6 @@
               {
                 "name": "SummarizationSetBy",
                 "value": "Automatic"
-              },
-              {
-                "name": "UnderlyingDateTimeDataType",
-                "value": "Date"
               }
             ],
             "dataType": "dateTime",
@@ -210,9 +240,11 @@
                 "    #\"Columnas reordenadas2\" = Table.ReorderColumns(#\"Columna duplicada2\",{\"TIPO_TRANSPORTE\", \"PARCIAL\", \"CANTIDAD\", \"Fecha\", \"Fecha - Copia\", \"Num Mes\", \"Año\"}),",
                 "    #\"Día extraído\" = Table.TransformColumns(#\"Columnas reordenadas2\",{{\"Fecha - Copia\", Date.Day, Int64.Type}}),",
                 "    #\"Columnas con nombre cambiado2\" = Table.RenameColumns(#\"Día extraído\",{{\"Fecha - Copia\", \"Dia\"}}),",
-                "    #\"Filas filtradas\" = Table.SelectRows(#\"Columnas con nombre cambiado2\", each ([PARCIAL] <> null))",
+                "    #\"Filas filtradas\" = Table.SelectRows(#\"Columnas con nombre cambiado2\", each ([PARCIAL] <> null)),",
+                "    #\"Tipo cambiado2\" = Table.TransformColumnTypes(#\"Filas filtradas\",{{\"Fecha\", type datetime}}),",
+                "    #\"Filas filtradas1\" = Table.SelectRows(#\"Tipo cambiado2\", each [Fecha] >= RangeStart and [Fecha] < RangeEnd)",
                 "in",
-                "    #\"Filas filtradas\""
+                "    #\"Filas filtradas1\""
               ],
               "type": "m"
             }
